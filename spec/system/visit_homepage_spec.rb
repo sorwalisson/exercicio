@@ -13,4 +13,10 @@ describe 'Visitante visita a homepage' do
     expect(page).to have_link('GTX 1080')
     expect(page).to have_link('Produtos')
   end
+
+  it 'e não há GPUs cadastradas' do
+    visit root_path
+
+    expect(page).to have_content('Não há GPUs disponíveis.')
+  end
 end
