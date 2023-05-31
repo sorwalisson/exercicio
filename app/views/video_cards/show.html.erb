@@ -1,0 +1,16 @@
+<h3><%= @videocard.name %></h3>
+
+<div>
+  <dl>
+    <dt>Marca:</dt>
+    <dd><%= @videocard.manufacturer %></dd>
+    <dt>Memória:</dt>
+    <dd><%= @videocard.memory %></dd>
+    <dt>Preço:</dt>
+    <dd><%= number_to_currency(@videocard.price) %></dd>
+    <dt>Qtd em estoque:</dt>
+    <dd><%= @videocard.stock %></dd>
+  </dl>
+</div>
+
+<%= link_to 'Voltar', root_path %>
