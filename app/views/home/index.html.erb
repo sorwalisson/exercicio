@@ -1,0 +1,20 @@
+<h2>Novas GPUs</h2>
+
+<% if @video_cards.present? %>
+  <% @video_cards.each do |vc| %>
+    <dl>
+      <dt>Modelo: </dt>
+      <dd><%=link_to vc.name, video_card_path(id: vc.id) %></dd>
+      <dt>Marca: </dt>
+      <dd><%= vc.manufacturer %></dd>
+      <dt>Memória: </dt>
+      <dd><%= vc.memory %>
+      <dt>Preço: </dt>
+      <dd><%= number_to_currency(vc.price) %></dd>
+    </dl>
+  <%end%>
+<%else%>
+  <p> 'Não há GPUs disponíveis.' </p>
+<%end%>
+
+<%= link_to "Produtos", root_path %>
